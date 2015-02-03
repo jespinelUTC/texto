@@ -1,4 +1,6 @@
-
+<?php
+	session_start();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,12 +33,13 @@ $pas=$_POST["txt_password"];
 $sentencia="select * from usuario where nombre='$nom' and password='$pas'";
 
 //CONTANDO EL NUMERO DE FILAS QUE SE OBTIENE DE LA CONSULTA 
+$resultado=mysql_query($sentencia);
 
-$resultado=mysql_num_rows(mysql_query($sentencia));
+$cantidad=mysql_num_rows($resultado);
 
 
 //SI ES IGUAL 0 SIGNIFICA QUE NO SE ENCONTRO USUARIOS CON ESE NOMBRE O CONTRASEÑA
-if ($resultado==0){
+if ($cantidad==0){
 	//echo "<br> no existe";
 ?>
 
@@ -75,6 +78,11 @@ if ($resultado==0){
 }else
 {
 	//echo '<br> si existe';
+	
+	while($fila=mysql_fetch_array($resultado)){
+		$_SESSION['idConectado']=$fila['id'];
+		$_SESSION['nombreConectado']=$fila['nombre'];
+	}
 	header("Location: menu.php");
 }
 

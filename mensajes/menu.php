@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,6 +32,10 @@
 					
 							<div class="panel-heading">
 								<h4>Mensajes</h4>
+								<?php
+									echo "<br>". $_SESSION['idConectado'];
+									echo "<br>". $_SESSION['nombreConectado'];
+								?>
 							</div>
 							
 							<form action="autenticar.php" method="POST">	
