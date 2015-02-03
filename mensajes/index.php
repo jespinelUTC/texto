@@ -2,6 +2,11 @@
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	
+	<?php
+	require_once('../conexion/conexion.php');
+	
+	?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- importando estilos bootstrap-->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -33,33 +38,35 @@
 								<h4>Mensajes</h4>
 							</div>
 							
-							<div class="panel-body">
+							<form action="autenticar.php" method="POST">	
 							
-								<div class="form-group">
-									<label class="col-md-3">Nombre: </label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" >
-									</div>
-								</div>	
-								<br><br>
-								<div class="form-group">
-									<label class="col-md-3">Password: </label>
-										<div class="col-md-9">
-										<input type="password" class="form-control" >
-									</div>
-								</div>	
-								<br><br>
-								<div class="form-group">
+								<div class="panel-body">
 								
-										<div class="col-md-3">
+									<div class="form-group">
+										<label class="col-md-3">Nombre: </label>
+											<div class="col-md-9">
+											<input type="text" class="form-control" name="txt_nombre" required >
 										</div>
-								
-										<div class="col-md-9">
-										<input type="submit" value="Entrar" class="btn btn-primary" >
-									</div>
-								</div>	
-								
-								
+									</div>	
+									<br><br>
+									<div class="form-group">
+										<label class="col-md-3">Password: </label>
+											<div class="col-md-9">
+											<input type="password" class="form-control" name="txt_password" required>
+										</div>
+									</div>	
+									<br><br>
+									<div class="form-group">
+									
+											<div class="col-md-3">
+											</div>
+									
+											<div class="col-md-9">
+											<input type="submit" value="Entrar" class="btn btn-primary" >
+										</div>
+									</div>	
+									
+							</form>
 															
 							</div>
 					</div>
