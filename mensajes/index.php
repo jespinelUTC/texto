@@ -4,9 +4,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- importando estilos bootstrap-->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<!-- importando funcionalidades de bootstrap-->
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
 	<meta http-equiv="Content-Language" content="en" />
 	<meta name="GENERATOR" content="PHPEclipse 1.2.0" />
 	<title>Bienvenido</title>
